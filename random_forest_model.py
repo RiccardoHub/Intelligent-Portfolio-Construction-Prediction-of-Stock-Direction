@@ -134,38 +134,7 @@ class DataProcessor:
                 "AUC": AUC,
             },
             "ConfusionMatrix": Confusion_matrix,
-            "FeatureImportance": feature_importance_dict,
+            "FeatureImportance": feature_importance_dict
         }
 
         return result
-
-
-# import yfinance as yf
-
-# tickers = "AAPL"
-# start = "2000-06-02"
-# end = "2016-04-26"
-# aapl_data = yf.download(tickers, start=start, end=end)[
-#     ["Adj Close", "Volume", "High", "Low", "Close"]
-# ]
-# data_processor = DataProcessor(aapl_data)
-# pre_processed_aapl_data = data_processor.prepare_data()
-# # results = []
-# # for horizon in range(1, 31):
-# #     result = data_processor.RFClassifier(
-# #         dependent_variable=f"Categorical_p_{horizon}",
-# #         independent_variables=["OBV", "%K", "%D", "MACD", "Signal"],
-# #         horizon=horizon,
-# #         ticker=tickers,
-# #     )
-# #     results.append(result)
-
-# result = []
-# for ticker in tickers:
-#     for horizon in range(1, 31):
-#         result = data_processor.RFClassifier(
-#             dependent_variable=f"Categorical_p_{horizon}",
-#             independent_variables=["OBV", "%K", "%D", "MACD", "Signal"],
-#             horizon=horizon,
-#             ticker=tickers,
-#         )
